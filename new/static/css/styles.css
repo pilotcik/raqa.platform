@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: url('../img/military_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
+.container {
+    padding: 20px;
+}
+a {
+    color: #1957ff;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    padding-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+p {
+    margin: 10px 0;
+}
+
+#navbar1 {
+    background-color: #333;
+    color: #fff;
+    overflow: auto;
+}
+
+#navbar1 a {
+    color: #fff;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#navbar1 h1 {
+  text-align: center;
+  align-items: center;
+    float: left;
+    padding-top: 20px;
+}
+
+#navbar1 ul {
+    float: right;
+    list-style: none;
+}
+
+#navbar1 ul li {
+    float: left;
+}
+
+#navbar1 ul li a {
+    display: inline-block;
+    padding: 25px;
+}
+
+#navbar1 ul li a:hover,
+#navbar1 ul li a.current {
+    background-color: #444;
+    color: #f7c08a;
+}
+
+#navbar1 ul li a.current {
+    background-color: #444;
+    color: #f7c08a;
+}
+
+.logo_class {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    justify-content: center;
+}
+
+.logo {
+    width: 450px; /* kerakli o‘lcham */
+    height: auto;
+    text-align: center;
+}
+/*ministry*/
+/* General styling for the page */
+/* Overall page styling */
+
+/* Overall page styling */
+
+/* Tree container */
+.tree {
+    text-align: center;
+}
+
+/* Styling for each node */
+.node {
+    border: 2px solid #444; /* Chiziqlar uchun qora rang */
+    color: rgb(255, 255, 255); /* Yozuvlar qora rangda */
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Main node (Mudofaa Vazirligi) */
+.main-node p {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.main-node p:hover{
+    transition: 0.1s;
+    font-style: italic;
+    transition: 0.1s;
+    color: #5185d3;
+    cursor: pointer;
+}
+/* Sub-tree (children of each node) */
+.sub-tree {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Adding lines connecting nodes */
+.node::before {
+    content: '';
+    width: 2px;
+    height: 20px;
+    background-color: #444; /* Chiziqlar uchun qora rang */
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Add vertical lines between nodes */
+.node + .node::before {
+    content: '';
+    width: 2px;
+    height: 40px;
+    background-color: #444; /* Chiziqlar uchun qora rang */
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Adjust the appearance of the connectors */
+.node p {
+    margin: 0;
+}
+
+
+/* buyruqlar*/
+.orders table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.orders th, .orders td {
+  padding: 10px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.action-cell {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.orders i {
+  cursor: pointer;
+  color: #0ff;
+  font-size: 18px;
+}
+
+.info-box {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(30, 30, 30, 0.92);
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: none;
+  width: 220px;
+  z-index: 10;
+  text-align: left;
+}
+
+/* Slider */
+.slider-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Tugmalar */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.prev:hover, .next:hover{
+  background-color: #aaa;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #aaa;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #fff;
+  transform: scale(1.5);
+}
+#main-footer {
+    width: 100%;
+    float: left;
+    padding: 50;
+    background-image: url("../img/hoteluzb1.jpg");
+    background-repeat: repeat;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#main-footer {
+    width: 100%;
+    float: left;
+    padding: 50;
+    background-color: #333;
+    background-repeat: repeat;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

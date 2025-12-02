@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>INTEGRATED DIGITAL PLATFORM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="./img/army.png" type="image/x-icon">
+    <title>INTEGRATED DIGITAL PLATFORM</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <div class="showcase-primary">
+                    <h1 class="logo"> <a href="#">INTEGRATED DIGITAL PLATFORM</a></h1>
+                    <ul>
+                        <li> <a href="#" class="current">Home</a></li>
+                        <li> <a href="about.html">About</a></li>
+                        <li> <a href="contact.html">Contact</a></li>
+                        <li><button class="btnLogin-popup">Sign Up</button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="showcase">
+            <div class="showcase-content">
+                <div class="wrapper">
+                    <span class="icon-close">
+                        <ion-icon name="close">❌</ion-icon>
+                    </span>
+                    <div class="form-box login">
+                        <h2>Login</h2>
+                        <form action="./new/templates/index.html">
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="mail"></ion-icon> </span>
+                                <input type="email" required id="email">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-box">
+                                <span class="icon"> <ion-icon name="lock-closed"></ion-icon></span>
+                                <input type="password" id="password" required>
+                                <label for="password">password</label>
+                            </div>
+                            <div class="remember-forget">
+                                <label>
+                                    <input type="checkbox">Remember me
+                                </label>
+                                <a href="#">
+                                    <hr>Forgot Password?</a>
+                            </div>
+                            <button type="submit" onclick="login()" class="btn1">
+                                Log in
+                            </button>
+                            <div class="login-register">
+                                <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="form-box register">
+                        <h2>Registration</h2>
+                        <form action="#">
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="person"></ion-icon> </span>
+                                <input type="text" id="newUsername" placeholder="Enter username" required>
+                                <label for="newUsername">Username:</label>
+                            </div>
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="mail"></ion-icon> </span>
+                                <input type="email" required id="newEmail">
+                                <label for="newEmail">Email</label>
+                            </div>
+                            <div class="input-box">
+                                <span class="icon"> <ion-icon name="lock-closed"></ion-icon></span>
+                                <input type="password" id="newPassword" required>
+                                <label for="newPassword">Password</label>
+                            </div>
+                            <div class="remember-forget">
+                                <label>
+                                    <input type="checkbox">I agree to the terms & conditions 
+                                </label>
+
+                            </div>
+                            <button type="submit" onclick="register()" class="btn1">
+                                Register
+                            </button>
+                            <div class="login-register">
+                                <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <h1><span class="text-primary">ARMY</span> of UZBEKISTAN</h1>
+                <p>ARMED FORCES MISSILE ARTILERY WEAPONS STORAGE
+                </p>
+                <a href="about.html" class="btn">About Us</a>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="home-info" class="bg-dark">
+        <div class="info-img"></div>
+        <div class="info-content">
+            <h2><span clas="text-primary">ARMY UZBEKISTAN  </span></h2>
+            <p>The armed forces of the Republic of Uzbekistan include military associations, formations and units established and maintained by the state to protect the national interests, sovereignty, territorial integrity and peaceful life of the population,
+                to repeal and provent wars and armed conflicts. (Ministry of Defence, Ministry of Internal Affairs, Ministry of Emergency Situations, State Security Service and National Guard) The Armed Forces of the Republic of Uzbekistan (Uzbek: O'zbekiston
+                Respublikasi Qurolli Kuchlari, Ўзбекистон Республикаси Қуролли Кучлари), is the name of the unified armed forces of Uzbekistan, consisting of the Ground Force and the Air and Air Defence forces under the defence ministry. Paramilitary
+                units include the National Guard,[2] a Frontier Service[3] and a River Force. It is reported to be the largest and the strongest in Central Asia.[4]
+            </p>
+            <a href="about.html" class="btn btn-light">Read More </a>
+        </div>
+    </section>
+
+    <div id="showcase1">
+        <div class="showcase-content1">
+            <div class="booking">
+                <div class="booking__type" id="booking-type">
+                    <div class="active">ONE WAY</div>
+                    <div>Round trip</div>
+                    <div>Multi city</div>
+                </div>
+                <form action="/" class="booking__form">
+                    <div class="booking__input">
+                        <label for="arrival">To</label>
+                        <input type="text" placeholder="Arrival">
+                    </div>
+                    <div class="booking__input">
+                        <label for="departure">From</label>
+                        <input type="text" placeholder="Departure">
+                    </div>
+                    <div class="booking__input">
+                        <label for="date">Date</label>
+                        <input type="text" placeholder="Date">
+                    </div>
+                </form>
+                <div class="booking__btn">
+                    <button type="submit" onclick="register()" class="btn btn-dark">Book Now </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section class="sectio__container service__container" id="service">
+        <h2 class="heading"><br>Our Services
+            <hr>
+        </h2>
+        <p class="heading__description">
+            Vivamus ultricies facilisis mauris, non facilisis velit pretium in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce eget posuere nibh. Sed sit amet eleifend ante. Mauris scelerisque at turpis ut tristique.
+            Morbi consequat lorem lectus. Fusce augue nulla, efficitur ac pulvinar non, laoreet non sem.
+        </p>
+        <div class="service__grid">
+            <div class="service__card">
+                <img src="./pics/shipping.png" alt="SHipping">
+                <div>
+                    <h4>SHIPPING</h4>
+                    <p>
+                        Integer at pulvinar turpis, nec dignissim ipsum. Nunc vitae dui lorem. Mauris egestas lacus nec luctus euismod. In eleifend erat ut ex tincidunt, sed blandit mauris commodo.
+                    </p>
+                    <div class="service__btn">
+                        <button type="submit" onclick="register()" class="btn btn-dark">more </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="service__card">
+                <img src="D:\Sardor\platform\pics\air.png" alt="AIR CARGO">
+                <div>
+                    <h4>AIR CARGO</h4>
+                    <p>
+                        Integer at pulvinar turpis, nec dignissim ipsum. Nunc vitae dui lorem. Mauris egestas lacus nec luctus euismod. In eleifend erat ut ex tincidunt, sed blandit mauris commodo.
+                    </p>
+                    <div class="service__btn">
+                        <button type="submit" onclick="register()" class="btn btn-dark">more </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="service__card">
+                <img src="./pics/train.jpg" alt="train">
+                <div>
+                    <h4>RAILWAY CARGO</h4>
+                    <p>
+                        Integer at pulvinar turpis, nec dignissim ipsum. Nunc vitae dui lorem. Mauris egestas lacus nec luctus euismod. In eleifend erat ut ex tincidunt, sed blandit mauris commodo.
+                    </p>
+                    <div class="service__btn">
+                        <button type="submit" onclick="register()" class="btn btn-dark">more </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="service__card">
+                <img src="./pics/truck.png" alt="truck">
+                <div>
+                    <h4>TRUCK LOGISTICS</h4>
+                    <p>
+                        Integer at pulvinar turpis, nec dignissim ipsum. Nunc vitae dui lorem. Mauris egestas lacus nec luctus euismod. In eleifend erat ut ex tincidunt, sed blandit mauris commodo.
+                    </p>
+                    <div class="service__btn">
+                        <button type="submit" onclick="register()" class="btn btn-dark">more </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="section__container offer__container" id="offer">
+        <div class="heading">
+            <h2 class="section__header"><br>ORDERING
+                <hr>
+            </h2>
+            <p class="heading__description">
+                Vivamus ultricies facilisis mauris, non facilisis velit pretium in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce eget posuere nibh. Sed sit amet eleifend ante. Mauris scelerisque at turpis ut tristique.
+                Morbi consequat lorem lectus. Fusce augue nulla, efficitur ac pulvinar non, laoreet non sem.
+                <a href="#" class="seeall"><b><i class="fa fa-underline" aria-hidden="true">See All</i>></a></p>
+
+        </div>
+        <div class="offer__grid">
+            <div class="offer__card">
+                <img src="./pics/guns.jpg" alt="guns">
+                <h4>GUNS and RIFFLES</h4>
+                <p>03.05.2015</p>
+                <div>
+                    <span>$5874.23</span>
+                    <button type="submit" onclick="register()" class="btn btn-dark">Book Now </button>
+                </div>
+            </div>
+            <div class="offer__card">
+                <img src="./pics/missile.jpg" alt="missle">
+                <h4>MISSLES and ROCKETS</h4>
+                <p>20.05.2018</p>
+                <div>
+                    <span>$12174.83</span>
+                    <button type="submit" onclick="register()" class="btn btn-dark">Book Now </button>
+                </div>
+            </div>
+            <div class="offer__card">
+                <img src="./pics/granade.jpg" alt="granade">
+                <h4>GRANADES</h4>
+                <p>12.01.2019</p>
+                <div>
+                    <span>$3475.96</span>
+                    <button type="submit" onclick="register()" class="btn btn-dark">Book Now </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="client" id="client">
+        <div class="section__container client__container">
+            <h2 class="heading"><br>The Commanders of Army
+                <hr>
+            </h2>
+            <p class="heading__description">
+                Vivamus ultricies facilisis mauris, non facilisis velit pretium in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce eget posuere nibh. Sed sit amet eleifend ante. Mauris scelerisque at turpis ut tristique.
+                Morbi consequat lorem lectus. Fusce augue nulla
+            </p>
+            <div class="swiper">
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <img src="./pics/uzgerb-removebg-preview.png" alt="SH.Mirziyoyev">
+                        <h4>Shavkat Miromonovich Mirziyoyev</h4>
+                        <p>Supreme Commander-In-Chief Of The Armed Forces</p>
+                        <div class="client__ratings">
+                            <span>
+                                ⭐⭐⭐⭐⭐
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <img src="./pics/mv.png" alt="B.Qurbonov">
+                        <h4> Shuxrat Gayratdjanovich Xalmuxammedov</h4>
+                        <p>Minister Of Defence</p>
+                        <div class="client__ratings">
+                            <span>
+                                ⭐⭐⭐⭐
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <img src="./pics/iiv-removebg-preview.png" alt="SP.Bobojonov">
+                        <h4>Po'lat  Razzoqovich Bobojonov</h4>
+                        <p>Minister Of The Interior</p>
+                        <div class="client__ratings">
+                            <span>
+                                ⭐⭐⭐⭐
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <img src="./pics/images-removebg-preview.png" alt="A.Qo'ldoshev">
+                        <h4>Abdulla Hamidullayevich Qo'ldoshev</h4>
+                        <p>Minister Of Emergency Situations</p>
+                        <div class="client__ratings">
+                            <span>
+                                ⭐⭐⭐⭐
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <img src="./pics/dxx-removebg-preview.png" alt="A.Azizov">
+                        <h4>Bahodir Nizomovich Qurbonov</h4>
+                        <p>Chairman Of The State Security Service</p>
+                        <div class="client__ratings">
+                            <span>
+                                ⭐⭐⭐⭐
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client__card">
+                        <img src="./pics/milliygvardiya-removebg-preview.png" alt="R.Jo'rayev">
+                        <h4>Rustam Mirzayevich Jo'rayev</h4>
+                        <p>commander of the National Guard</p>
+                        <div class="client__ratings">
+                            <span>
+                                ⭐⭐⭐⭐
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="feautures">
+        <div class="box1">
+            <span class="clickable" onclick="scrollToSection('service')">
+                <div class="box bg-light">
+                    <img src="./pics/infrastructure.png">
+                    <h3><span class="text-primary">TRANSPORTATION </span></h3>
+
+            <p>Integer at pulvinar turpis, nec dignissim ipsum. Nunc vitae du
+            </p>
+        </div>
+        </span>
+        </div>
+        <div class="box1">
+            <span class="clickable" onclick="scrollToSection('client')">
+                <div class="box bg-light">
+                    <img src="./pics/customer-review.png">
+                    <h3><span class="text-primary">STUFF</span> </h3>
+
+            <p><b>Integer at pulvinar turpis, nec dignissim ipsum. Nunc vitae du</p></a>
+                </div>  
+            </span>
+        </div>
+            <div class="box1">
+                <span class="clickable" onclick="scrollToSection('offer')">
+
+                    <div class="box bg-light">
+                        <img src="./pics/nonviolence.png">
+                        <h3><span class="text-primary">ORDERING</span> </h3>
+                        <p><b>Integer at pulvinar turpis, nec dignissim ipsum. Nunc vitae du</p></a>
+                    </div>
+                </span>
+        </div>
+
+        
+    </section>
+    <div class="clr"></div>
+    <footer id="main-footer">
+        <p>ID platform  &copy; 2024, All rights reserved.<hr><b> @cadet_Mo'ydinov</p>
+    </footer>
+    <script src="main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="login.js"></script>
+    <script src="register.js"></script>
+    </body>
+</html>

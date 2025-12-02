@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/img/army.png" type="image/x-icon">
+    <title>INTEGRATED DIGITAL PLATFORM</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar1">
+            <div class="container1">
+                <div class="showcase-primary">
+                    <h1 class="logo1"> <a href="#">INTEGRATED DIGITAL PLATFORM</a></h1>
+                    <ul>
+                        <li> <a href="#" class="current">Home</a></li>
+                        <li> <a href="database.html">Database</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>    
+    <div class="background-overlay"></div>
+    <div class="container">
+        
+        
+        <div class="logo_class">
+            <img src="../static/img/MV.png" alt="Sayt Logosi" class="logo">
+        </div>
+
+        <!-- 1-sxema -->
+        <div class="tree">
+            <div class="node main-node">
+                <p>Ministry of Defense</p>
+                <div class="sub-tree">
+                    <div class="node">
+                        <p>Western District</p>
+                        <div class="sub-tree">
+                            <div class="node">
+                                <p>Military unit 1</p>
+                            </div>
+                            <div class="node">
+                                <p>Military unit 2</p>
+                            </div>
+                            <div class="node">
+                                <p>Military unit 5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="node">
+                        <p>Central District</p>
+                        <div class="sub-tree">
+                            <div class="node">
+                                <p>Military unit 3</p>
+                            </div>
+                            <div class="node">
+                                <p>Military unit 4</p>
+                            </div>
+                            <div class="node">
+                                <p>Military unit 6</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="node">
+                        <p>Southern District</p>
+                        <div class="sub-tree">
+                            <div class="node">
+                                <p>Military unit 7</p>
+                            </div>
+                            <div class="node">
+                                <p>Military unit 8</p>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="node">
+                        <p>Eastern District</p>
+                        <div class="sub-tree">
+                            <div class="node">
+                                <p>Military unit 9</p>
+                            </div>
+                            <div class="node">
+                                <p>Military unit 10</p>
+                            </div>
+                            <div class="node">
+                                <p>Military unit 11</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="node">
+                        <p>Northern District</p>
+                        <div class="sub-tree">
+                            <div class="node">
+                                <p> <span style="color: red;"><a href="database.html">Military Unit 12</a></span> </p>
+                            </div>
+                            <div class="node">
+                                <p>Military unit 13</p>
+                            </div>
+                            <div class="node">
+                                <p>Military unit 14</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 1-buyruq secction -->
+        <section class="orders">
+            <h2>Orders</h2>
+            <table>
+                <tr>
+                <th>T/R</th>
+                <th>Count</th>
+                <th>Date</th>
+                <th>Operations</th>
+                </tr>
+
+                <!-- 1-buyruq -->
+                <tr>
+                <td>1</td>
+                <td>Order-001</td>
+                <td>2025-04-29</td>
+                <td>
+                    <div class="action-cell">
+                    <i onclick="viewPDF('../files/buyruq_a.pdf')">👁️</i>
+                    <i onclick="downloadPDF('../files/buyruq_a.pdf')">⬇️</i>
+                    <i class="info-icon"
+                        onmouseover="showInfo(this, 'From Ministry of Defense', 'Order-001', '29.04.2025', 'For Central District')"
+                        onmouseout="hideInfo(this)">ℹ️</i>
+                    <div class="info-box"></div>
+                    </div>
+                </td>
+                </tr>
+
+                <!-- 2-buyruq -->
+                <tr>
+                <td>2</td>
+                <td>Order-002</td>
+                <td>2025-04-28</td>
+                <td>
+                    <div class="action-cell">
+                    <i onclick="viewPDF('files/buyruq2.pdf')">👁️</i>
+                    <i onclick="downloadPDF('files/buyruq2.pdf')">⬇️</i>
+                    <i class="info-icon"
+                        onmouseover="showInfo(this, 'From President Administration', 'Order-002', '28.04.2025', 'For all military units')"
+                        onmouseout="hideInfo(this)">ℹ️</i>
+                    <div class="info-box"></div>
+                    </div>
+                </td>
+                </tr>
+
+                <!-- 3-buyruq -->
+                <tr>
+                <td>2</td>
+                <td>Order-003</td>
+                <td>2025-04-18</td>
+                <td>
+                    <div class="action-cell">
+                    <i onclick="viewPDF('files/buyruq2.pdf')">👁️</i>
+                    <i onclick="downloadPDF('files/buyruq2.pdf')">⬇️</i>
+                    <i class="info-icon"
+                        onmouseover="showInfo(this, 'From Central Military Services', 'Order-003', '18.04.2025', 'For Eastern District')"
+                        onmouseout="hideInfo(this)">ℹ️</i>
+                    <div class="info-box"></div>
+                    </div>
+                </td>
+                </tr>
+
+            </table>
+        </section>
+
+
+
+        <section class="news">
+            <h2>News Blog</h2>
+            <div class="slider-container">
+                <div class="slider">
+                <div class="slide">
+                    <img src="../static/img/news1.jpg" alt="Yangilik 1">
+                    <p class="caption">As we informed earlier, the 2025 military competition took place from April 22 to 26.  
+                    In it, the winners and prizewinners were determined in ten disciplines of military-applied and Olympic 
+                    sports, including hand-to-hand combat, army biathlon, knife throwing, stone lifting, badminton, athletics,
+                     national wrestling, shooting, and three types of wrestling, both in individual and team categories.</p>
+                </div>
+                <div class="slide">
+                    <img src="../static/img/news2.jpg" alt="Yangilik 2">
+                    <p class="caption">The Ministry of Defense, in cooperation with a number of ministries and agencies,
+                         is conducting public mobile receptions and job fairs to socially support military personnel and 
+                         their family members, as well as to study and solve existing problems by visiting local areas.</p>
+                </div>
+                <div class="slide">
+                    <img src="../static/img/news3.png" alt="Yangilik 3">
+                    <p class="caption">A memorandum of cooperation was signed between the Ministry of Defense of the Republic of Uzbekistan,
+                         the Northwestern Military District, and the "IT Training Center Ustudy" at the
+                          Department of Defense of the Republic of Karakalpakstan. The memorandum aims to organize additional
+                           training courses in the field of information technology for the servicemen of the Nukus garrison 
+                           mobilization call-up reserve battalion.</p>
+                </div>
+                </div>
+                <button class="prev" onclick="prevSlide()"><</button>
+                <button class="next" onclick="nextSlide()">></button>
+                <div class="dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                </div>
+            </div>
+        </section>
+
+
+
+        <div id="info-box" class="hidden"></div>
+    </div>
+    <footer id="main-footer">
+        <p>ID platform  &copy; 2024, All rights reserved.<hr><b> @cadet_Mo'ydinov</p>
+    </footer>
+    <script src="../static/js/scripts.js"></script>
+</body>
+</html>
+
+
+

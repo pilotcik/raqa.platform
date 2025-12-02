@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>INTEGRATED DIGITAL PLATFORM</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link rel="shortcut icon" href="../static/img/army.png" type="image/x-icon">
+  <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #f0f0f0; /* Yumshoq oq */
+    background: url('../static/img/military_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
+.container {
+    padding: 20px;
+}
+a {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    padding-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    color: #f0f0f0;
+}
+
+p {
+    margin: 10px 0;
+    color: #ddd;
+}
+
+#navbar1 {
+    background-color: #333;
+    color: #f0f0f0;
+    overflow: auto;
+}
+
+#navbar1 a {
+    color: #f0f0f0;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#navbar1 h1 {
+    text-align: center;
+    float: left;
+    padding-top: 20px;
+}
+
+#navbar1 ul {
+    float: right;
+    list-style: none;
+}
+
+#navbar1 ul li {
+    float: left;
+}
+
+#navbar1 ul li a {
+    display: inline-block;
+    padding: 25px;
+}
+
+#navbar1 ul li a:hover,
+#navbar1 ul li a.current {
+    background-color: #444;
+    color: #f7c08a;
+}
+
+#main-footer {
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+    margin-top: 50px;
+    background-image: url("../static/img/hoteluzb1.jpg");
+    background-repeat: repeat;
+    text-align: center;
+    color: #f0f0f0;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #444;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+input, button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+button {
+    background-color: #2e2e2e;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    color: #f0f0f0;
+}
+
+.highlight {
+    background-color: yellow;
+    color: #000;
+}
+
+.divider {
+    margin: 40px 0;
+    border-top: 2px solid #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+    #main-footer {
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+    margin-top: 50px;
+    background-image: url("../static/img/hoteluzb1.jpg");
+    background-repeat: repeat;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    th, td {
+       padding: 10px;
+       border: 1px solid #444;
+       text-align: center;
+    }
+    input, button {
+      margin: 5px;
+      padding: 5px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .highlight {
+      background-color: rgb(168, 168, 155);
+    }
+    .divider {
+      margin: 40px 0;
+      border-top: 2px solid #ffffff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(2px);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+function createRow(tableId, inputs) {
+  const table = document.getElementById(tableId);
+  const row = table.insertRow();
+  row.insertCell(0).innerText = table.rows.length - 1;
+  inputs.forEach(val => row.insertCell().innerText = val);
+  if (tableId === "storage") {
+    const delCell = row.insertCell();
+    const delBtn = document.createElement("button");
+    delBtn.innerText = "delete";
+    delBtn.onclick = () => {
+      row.remove();
+      updateTR(tableId);
+    };
+    delCell.appendChild(delBtn);
+  }
+  return row;
+}
+
+function updateTR(tableId) {
+  const table = document.getElementById(tableId);
+  for (let i = 1; i < table.rows.length; i++) {
+    table.rows[i].cells[0].innerText = i;
+  }
+}
+
+function clearInputs(prefix) {
+  document.querySelectorAll(`[id^=${prefix}]`).forEach(el => el.value = '');
+}
+
+function addData(prefix, tableId) {
+  const inputs = [
+    document.getElementById(`${prefix}name`).value,
+    document.getElementById(`${prefix}count`).value,
+    document.getElementById(`${prefix}amount`).value,
+    document.getElementById(`${prefix}from`).value,
+    document.getElementById(`${prefix}to`).value,
+    document.getElementById(`${prefix}date`).value, // Sana inputini qo‘shdik
+    document.getElementById(`${prefix}category`).value,
+    document.getElementById(`${prefix}index`).value,
+    document.getElementById(`${prefix}type`).value // Turi
+  ];
+  if (inputs.includes("")) {
+    alert("Please fill in all the fields!");
+    return;
+  }
+  createRow(tableId, inputs);
+  updateTR(tableId);
+  clearInputs(prefix);
+
+  // Ombor jadvaliga faqat kirishdan avtomatik qo‘shiladi
+  if (tableId === 'incoming') {
+    createRow("storage", inputs);
+    updateTR("storage");
+  }
+}
+
+function searchByIndex(inputId, tableId) {
+  const index = document.getElementById(inputId).value.trim();
+  const table = document.getElementById(tableId);
+  let found = false;
+
+  for (let i = 1; i < table.rows.length; i++) {
+    const row = table.rows[i];
+    row.classList.remove("highlight");
+    if (row.cells[8].innerText === index) {
+      row.classList.add("highlight");
+      found = true;
+    }
+  }
+
+  if (!found) alert("not found");
+}
+
+function exportToExcel(tableId, namePrefix) {
+  const table = document.getElementById(tableId);
+  const ws = XLSX.utils.table_to_sheet(table);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Table");
+
+  const today = new Date();
+  const dateStr = today.toISOString().slice(0,10);
+  XLSX.writeFile(wb, `${dateStr}_${namePrefix}.xlsx`);
+}
+
+function removeFromStorage(index) {
+  const table = document.getElementById("storage");
+  let found = false;
+
+  for (let i = 1; i < table.rows.length; i++) {
+    const row = table.rows[i];
+    if (row.cells[8].innerText === index) {
+      row.remove();
+      updateTR("storage");
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    alert("Such an index number does not exist in the STORAGE.");
+  }
+}
+
+function handleOutgoing() {
+  const index = document.getElementById('cindex').value.trim();
+  if (!index) {
+    alert("Enter the index number.");
+    return;
+  }
+  removeFromStorage(index);
+  addData('c', 'outgoing');
+}
+
+function sortTableByColumn(tableId, columnIndex) {
+  const table = document.getElementById(tableId);
+  const rows = Array.from(table.rows).slice(1);
+  const sortedRows = rows.sort((rowA, rowB) => {
+    const cellA = rowA.cells[columnIndex].innerText.trim().toLowerCase();
+    const cellB = rowB.cells[columnIndex].innerText.trim().toLowerCase();
+    return cellA.localeCompare(cellB);
+  });
+  
+  // Ta'riflangan tartibda qayta joylashtiring
+  sortedRows.forEach(row => table.appendChild(row));
+  updateTR(tableId);
+}
+
+</script>
+<header>
+        <nav id="navbar1">
+            <div class="container1">
+                <div class="showcase-primary">
+                    <h1 class="logo1"> <a href="#">INTEGRATED DIGITAL PLATFORM</a></h1>
+                    <ul>
+                        <li> <a href="./index.html" >Home</a></li>
+                        <li> <a href="#" class="current">Database</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</header>
+<div class="background-overlay"></div>
+<!-- Kirish -->
+<h2>INCOMING</h2>
+<div>
+  <input id="kname" placeholder="Name">
+  <input id="kcount" type="number" placeholder="Count">
+  <input id="kamount" placeholder="Amount">
+  <input id="kfrom" placeholder="Arrived military unit">
+  <input id="kto" placeholder="Departed military unit">
+  <input id="kdate" type="date" placeholder="Date"> <!-- Sana inputi -->
+  <input id="kcategory" placeholder="Category">
+  <input id="kindex" placeholder="Index number">
+  <input id="ktype" placeholder="Type">
+  <br>
+  <button onclick="addData('k', 'incoming')">Add</button>
+  <button onclick="clearInputs('k')">Clear</button>
+  <button onclick="exportToExcel('incoming', 'incoming')">Excel save</button>
+  <input id="searchIndexK" placeholder="index number finder">
+  <button onclick="searchByIndex('searchIndexK', 'incoming')">Search</button>
+  <button onclick="sortTableByColumn('incoming', 9)">Sort by Type</button>
+</div>
+<table id="incoming">
+  <tr>
+    <th>T/R</th><th>Name</th><th>Count</th><th>Amount</th>
+    <th>Arrived military unit</th><th>Departed military unit</th>
+    <th>Date</th><th>Category</th><th>Index Number</th><th>Type</th>
+  </tr>
+</table>
+
+<div class="divider"></div>
+
+<!-- Chiqish -->
+<h2>OUTGOING</h2>
+<div>
+  <input id="cname" placeholder="Name">
+  <input id="ccount" type="number" placeholder="Count">
+  <input id="camount" placeholder="Amount">
+  <input id="cfrom" placeholder="Arrived military unit">
+  <input id="cto" placeholder="Departed military unit">
+  <input id="cdate" type="date" placeholder="Date"> <!-- Sana inputi -->
+  <input id="ccategory" placeholder="Category">
+  <input id="cindex" placeholder="Index number">
+  <input id="ctype" placeholder="Type">
+  <br>
+  <button onclick="handleOutgoing()">Add</button>
+  <button onclick="clearInputs('c')">Clear</button>
+  <button onclick="exportToExcel('outgoing', 'outgoing')">Excel save</button>
+  <input id="searchIndexC" placeholder="index number finder">
+  <button onclick="searchByIndex('searchIndexC', 'outgoing')">Search</button>
+  <button onclick="sortTableByColumn('outgoing', 9)">Sort by Type</button>
+</div>
+<table id="outgoing">
+  <tr>
+    <th>T/R</th><th>Name</th><th>Count</th><th>Amount</th>
+    <th>Arrived military unit</th><th>Departed military unit</th>
+    <th>Date</th><th>Category</th><th>Index number</th><th>Type</th>
+  </tr>
+</table>
+
+<div class="divider"></div>
+
+<!-- Ombor -->
+<h2>STORAGE</h2>
+<div>
+  <button onclick="exportToExcel('storage', 'storage')">Excel save</button>
+  <input id="searchIndexO" placeholder="index number finder">
+  <button onclick="searchByIndex('searchIndexO', 'storage')">Search</button>
+  <button onclick="sortTableByColumn('storage', 9)">Sort by Type</button>
+</div>
+<table id="storage">
+  <tr>
+    <th>T/R</th><th>Name</th><th>Count</th><th>Amount</th>
+    <th>Arrived military unit</th><th>Departed military unit</th>
+    <th>Date</th><th>Category</th><th>Index number</th><th>Type</th><th>delete</th>
+  </tr>
+</table>
+<footer id="main-footer">
+    <p>ID platform  &copy; 2024, All rights reserved.<hr><b> @cadet_Mo'ydinov</p>
+</footer>
+</body>
+</html>
