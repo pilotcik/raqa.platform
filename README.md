@@ -1,2 +1,2 @@
 # raqa.platform
-RAQA xizmat uchun platforma
+RAQA xizmati uchun platforma
